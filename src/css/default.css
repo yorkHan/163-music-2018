@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+*::before{
+    box-sizing: border-box;
+}
+*::after{
+    box-sizing: border-box;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    color: inherit;
+    text-decoration: inherit;
+}
+body{
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* layout */
+.page{
+    display: flex;
+    height: 100vh;
+}
+.page > aside{
+    width: 300px;
+}
+.page > main{
+    flex-grow: 1;
+    border: 1px solid green;
+}
+
+/* aside */
+.page > aside{
+    display: flex;
+    flex-direction: column;
+}
+.newSong{
+    padding: 10px;
+    text-align: center;
+}
+.newSong.active{
+    background-color: #9ecde9;
+}
+.songList{
+    text-align: left;
+    border-top:1px solid black;
+    flex-grow: 1; 
+}
+.songList li{
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    margin:0 10px; 
+}
+.songList li.active{
+    background-color: #9ecde9;
+}
+.uploadArea{
+
+}
+.dropable {
+    text-align: center;
+    border: 1px dashed gray;
+    padding:50px 0px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    flex-direction: column;
+}
+.clickable {
+    cursor: pointer;
+}
