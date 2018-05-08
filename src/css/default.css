@@ -12,6 +12,9 @@
 ul,ol{
     list-style: none;
 }
+input{
+    font: inherit;
+}
 a{
     color: inherit;
     text-decoration: inherit;
@@ -31,7 +34,6 @@ body{
 }
 .page > main{
     flex-grow: 1;
-    border: 1px solid green;
 }
 
 /* aside */
@@ -54,7 +56,6 @@ body{
 .songList li{
     border-bottom: 1px solid #ddd;
     padding: 10px;
-    margin:0 10px; 
 }
 .songList li.active{
     background-color: #9ecde9;
@@ -75,4 +76,45 @@ body{
 }
 .clickable {
     cursor: pointer;
+}
+/* form */
+.page main{
+    background-color: #9ecde9;
+    padding-top: 20px;
+}
+.form{
+    font-size: 16px;
+}
+.form > .row{
+    margin: 20px 0;
+    display: flex;
+}
+.form > .row > label{
+    width: 4em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5px;
+}
+.form input[type=text]{
+    padding: 3px 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.form input[type=button],
+.form input[type=submit],
+.form button{
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+.form .row.actions button{
+    margin-left:calc(4em + 5px);
+    font-size: 16px;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+.page > main > .form{
+
 }
