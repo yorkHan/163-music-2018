@@ -48,16 +48,18 @@ body{
 .newSong.active{
     background-color: #9ecde9;
 }
-.songList{
-    text-align: left;
-    border-top:1px solid black;
+#songList-container{
     flex-grow: 1; 
 }
-.songList li{
+#songList-container .songList{
+    text-align: left;
+    border-top:1px solid black;
+}
+#songList-container .songList li{
     border-bottom: 1px solid #ddd;
     padding: 10px;
 }
-.songList li.active{
+#songList-container .songList li.active{
     background-color: #9ecde9;
 }
 .uploadArea{
