@@ -45,16 +45,16 @@
         },
         create(data){
               // 声明类型
-            var Song = AV.Object.extend('song');
+            var Song = AV.Object.extend('Song');
             // 新建对象
-            var song = new Song();
+            var Song = new Song();
             // 设置名称
-            song.set('name',data.name);
-            song.set('singer',data.singer);
-            song.set('url',data.url);
+            Song.set('name',data.name);
+            Song.set('singer',data.singer);
+            Song.set('url',data.url);
             // 设置优先级
-            song.set('priority',1);
-            return song.save().then((newSong)=> {
+            Song.set('priority',1);
+            return Song.save().then((newSong)=> {
                 let {id,attributes}=newSong
                 Object.assign(this.data,{ id, ...attributes })
             }, (error)=> {
