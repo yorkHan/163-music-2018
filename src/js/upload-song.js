@@ -36,12 +36,13 @@
                     },
                     'BeforeUpload': function(up, file) {
                             // 每个文件上传前,处理相关的事情
+                            window.eventHub.emit('beforeUpload')
                     },
                     'UploadProgress': function(up, file) {
-                        uploading.textContent="上传中"
+                        
                     },
                     'FileUploaded': function(up, file, info) {
-                        uploading.textContent="上传完毕"
+                        window.eventHub.emit('afterUpload')
                             // 每个文件上传成功后,处理相关的事情
                             // 其中 info.response 是文件上传成功后，服务端返回的json，形式如
                             // {
