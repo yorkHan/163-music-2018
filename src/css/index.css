@@ -89,8 +89,6 @@ section.topbar > a::after{
 .tabs-nav >li.active{
   color: #D43C33;
 }
-.tabs-nav >li.active>.text{ 
-}
 .tabs-nav >li.active>.text::after{
   content: '';
   position: absolute;
