@@ -6,10 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>网易云音乐demo</title>
     <link rel="stylesheet" href="./css/song.css">
-
 </head>
 <body>
-    <div id="app"></div>
+    <div class="bg"></div>
+    <div class="page" id="app">
+            <audio src="#"></audio>
+            <div class="disc-container">
+                <img class="pointer" src="./images/pointer.png" alt="">
+                <div class="disc">
+                <div class="icon-wrapper">
+                    <svg class="icon icon-play">
+                    <use xlink:href="#icon-play"></use>
+                    </svg>
+                    <div class="icon icon-pause">
+                    暂
+                    </div>
+                </div>
+                <img class="ring" src="./images/dist.png" alt="">
+                <img class="light" src="./images/dist-light.png" alt="">
+                <img src="./images/3-way.png" alt="" class="cover">
+                </div>
+            </div>
+            <div class="song-description">
+                <h1></h1>
+                <div class="lyric">
+                <div class="lines">
+        
+                </div>
+                </div>
+            </div>
+            <div class="links">
+                <a href="#">打开</a>
+                <a class="main" href="#">下载</a>
+            </div>
+            </div>
     <script src="//at.alicdn.com/t/font_395875_4hwrep7mypx8ncdi.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
