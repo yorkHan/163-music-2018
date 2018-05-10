@@ -29,6 +29,7 @@
 .disc-container .icon-wrapper{position: absolute; z-index: 1; display: flex; 
 	justify-content: center; align-items: center;
 	height: 20vw; width: 20vw;
+	border: 1px solid white;
 	border-radius: 50%; background: rgba(0,0,0,0.5);
 }
 .disc-container .icon {width: 10vw; fill: white;}
@@ -57,7 +58,7 @@
 	margin-top: 20px;
 }
 .song-description h1{
-	color: white;
+	color: whitesmoke;
 	font-size: 18px;
 }
 .song-description p{
