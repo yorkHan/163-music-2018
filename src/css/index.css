@@ -12,10 +12,14 @@ h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 B
 body{font:14px/1.5 Helvetica,sans-serif;}
 .icon {
-  width: 1em; height: 1em;
-  vertical-align: -0.15em;
+  width: 2em; height: 2em;
+  vertical-align: -0.6em;
   fill: currentColor;
   overflow: hidden;
+}
+.sq{
+  width:1.5em;
+  height:1.9em;
 }
 body{
   font-size: 15px;
@@ -148,7 +152,7 @@ section.songs > .list > li > h3{
   font-size: 17px;
 }
 section.songs > .list > li > p{
-  font-size: 12px;
+  font-size: 15px;
   color: #888;
 }
 section.songs > .list > li{

@@ -5,9 +5,16 @@
             let {song}=data
             $('div.bg').css('background-image',`url(${song.cover})`)
             $(this.el).find('img.cover').attr('src',song.cover)
-            $(this.el).find('.song-description>h1').text(song.name) 
-            let {lyrics} = song
-            let array=lyrics.split('\n')
+            $(this.el).find('.song-description>h1').text(song.name)
+            let audio=$(this.el).find('audio').attr('src',song.url).get(0)
+            audio.ontimeupdate=()=>{
+                this.showLyric(audio.currentTime)
+            }
+            audio.onended=()=>{
+                this.pause()
+            }
+                let lyric = song.lyrics
+                let array=lyric.split('\n')
             array.map((string)=>{
                 let regex = /\[([\d:.]+)\](.+)/
                 let matches = string.match(regex)
@@ -24,13 +31,6 @@
                     para.text(string)
                 }
             })
-            let audio=$(this.el).find('audio').attr('src',song.url).get(0)
-            audio.ontimeupdate=()=>{
-                this.showLyric(audio.currentTime)
-            }
-            audio.onended=()=>{
-                this.pause()
-            }
         },
         showLyric(time){
             let allP=$(this.el).find('.lyric>.lines>p')
@@ -48,14 +48,16 @@
                 }
             } 
             }
-            let pHeight=p.getBoundingClientRect().top
-            let lineHeight=$(this.el).find('.lyric>.lines')[0].getBoundingClientRect().top
-            let height=pHeight-lineHeight
-            $(this.el).find('.lyric>.lines').css({
-                transform:`translateY(${-(height)}px)`
-            })
-            $(p).addClass('active').siblings('.active').removeClass('active')
-        },
+            if(p){
+                let pHeight=p.getBoundingClientRect().top
+                let lineHeight=$(this.el).find('.lyric>.lines')[0].getBoundingClientRect().top
+                let height=pHeight-lineHeight
+                $(this.el).find('.lyric>.lines').css({
+                    transform:`translateY(${-(height)}px)`
+                })
+                $(p).addClass('active').siblings('.active').removeClass('active')
+            }
+             },
         play(data){
             $(this.el).find('audio')[0].play()
             $(this.el).find('.disc-container').addClass('playing')
@@ -74,8 +76,7 @@
                 url:'',
                 cover:'',
                 lyrics:'',
-            },
-            status:'paused'
+            }
         },
         getId(id){
             var query = new AV.Query('Song');
