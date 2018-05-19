@@ -1,11 +1,8 @@
 {
     let view={
         el:'#siteLoading',
-        show(){
-            $(this.el).addClass('active')
-        },
-        hide(){
-            $(this.el).removeClass('active')
+        show(num){
+            $(this.el).children(".loading").css("width", num);
         }
     }
     let controller={
@@ -15,11 +12,12 @@
             
         },
         bindEventHub(){
-            window.eventHub.on('beforeUpload',()=>{
-                this.view.show()
+            window.eventHub.on('onUpload',(percent)=>{
+                var num=parseFloat(percent)*100+'%'
+                this.view.show(num)
             })
             window.eventHub.on('afterUpload',()=>{
-                this.view.hide()
+                alert('上传成功')
             })
         }
     }

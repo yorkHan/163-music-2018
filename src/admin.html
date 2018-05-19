@@ -8,27 +8,40 @@
     <link rel="stylesheet" href="./css/default.css">
 </head>
 <body>
+    <div class="topNavBar">
+        <div class="display">
+            <span class="siteName"><a href="./admin.html">MUSIC</a></span>
+            <a href="./index.html" target="_blank">
+                <ul class="site">
+                    <li>Index</li>
+                </ul>
+            </a>
+        </div>
+    </div>
     <div class="page">
         <aside>
-            <div class="newSong"></div>
-            <div id="songList-container">
-                
+            <div class="title">
+                <h1>Music Upload</h1>
+                <span>10 MB max per file</span>
             </div>
             <div class="uploadArea">
                 <div id="uploadContainer" class="dropable">
                     <div id="pickfiles" class="clickable">
                         <span>上传或拖曳文件</span>
-                        <p>文件大小不能超过 10MB</p>
                     </div>
                 </div>
             </div>
+            <div id="siteLoading"  class="loading-container">
+                <div class="loading"></div>
+            </div>
+            <div class="songContainer">
+                <span class="newSong"></span>
+                <span id="songList-container">
+                </span>
+            </div>
         </aside>
         <main>
-            
         </main>
-    </div>
-    <div id="siteLoading" class="site-loading">
-    </div>
     <script src="./vendors/jquery.min.js"></script>
     <script src="./vendors/av-min.js"></script>
     <script src="./js/initializers/av.js"></script>

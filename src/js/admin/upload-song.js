@@ -39,7 +39,8 @@
                             window.eventHub.emit('beforeUpload')
                     },
                     'UploadProgress': function(up, file) {
-                        
+                        var percent=file.loaded/file.size;
+                        window.eventHub.emit('onUpload',percent)
                     },
                     'FileUploaded': function(up, file, info) {
                         window.eventHub.emit('afterUpload')
