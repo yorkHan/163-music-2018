@@ -204,3 +204,18 @@ section.art .copyright{
   color: #888;
   transform: scale(.75);
 }
+/*search*/
+.page-3{
+  text-align: center;
+}
+.search{
+  width: 95%;
+  margin: 4vw 0;
+  border: 0.1vw solid #EBECEC;
+  background-color: #EBECEC;
+  padding: 2vw 0 2vw 2vw;
+  border-radius: 5vw;
+  outline: none;
+}
+
+
